@@ -1,13 +1,21 @@
 """Расчёт площади и периметра прямоугольника."""
 
 
+def check_sides(width, height):
+    """Проверяет, что стороны неотрицательные."""
+    if width < 0 or height < 0:
+        raise ValueError("Стороны не могут быть отрицательными")
+
+
 def area(width, height):
     """Возвращает площадь прямоугольника."""
+    check_sides(width, height)
     return width * height
 
 
 def perimeter(width, height):
     """Возвращает периметр прямоугольника."""
+    check_sides(width, height)
     return 2 * (width + height)
 
 
